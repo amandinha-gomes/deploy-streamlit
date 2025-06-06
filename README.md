@@ -1,4 +1,4 @@
-# Projeto Streamlit - Execução Local
+## Projeto Streamlit - Execução Local
 
 ### Pré-requisitos
 
@@ -29,7 +29,11 @@ python -m venv .venv
 exe: pip install streamlit numpy pandas matplotlib seaborn
 
 ### 4. Executar a Aplicação
+```bash
 streamlit run app.py
+```
+
+> Substitua `app.py` pelo nome do arquivo principal do seu projeto, se for diferente.
 
 ### Verificação Rápida
 
