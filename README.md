@@ -16,7 +16,7 @@ cd seu-repositorio
 2. Crie e ative o ambiente virtual:
 python -m venv venv
 
-# Windows:
+### Windows:
 venv\Scripts\activate
 
 3. Instale as dependências:
