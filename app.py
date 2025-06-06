@@ -22,16 +22,17 @@ data = {
         np.random.normal(8000, 5000, 37)    # Small Business
     ])
 }
+
 df = pd.DataFrame(data)
 
 # Criar gráfico de boxplot
 fig, ax = plt.subplots(figsize=(12, 8))
+
 boxplot = sns.boxplot(
     data=df, 
     x='Segment', 
     y='Profit', 
     order=['Government', 'Midmarket', 'Channel Partners', 'Enterprise', 'Small Business'],
-    palette='Set2',
     width=0.6,
     ax=ax
 )
@@ -40,7 +41,7 @@ boxplot = sns.boxplot(
 ax.set_title("Distribuição dos Lucros por Segmento", fontsize=16, pad=20)
 ax.set_xlabel("Segmento", fontsize=12, labelpad=10)
 ax.set_ylabel("Lucro (Profit)", fontsize=12, labelpad=10)
-ax.set_ylim(0, 80000)  # Ajuste conforme seus dados reais
+ax.set_ylim(0, 80000)
 ax.yaxis.set_major_formatter('{x:,.0f}')
 
 # Adicionar contagem de observações
