@@ -1,53 +1,30 @@
-## Deploy de Aplicação Streamlit na AWS EC2
-Como fazer o deploy de uma aplicação Streamlit em uma instância EC2 da AWS para acesso externo.
+# 🧠 Projeto Streamlit - Execução Local
 
 ### Pré-requisitos
-Instância EC2 ativa na AWS
-Acesso SSH ou EC2 Instance Connect à instância
-Security Group configurado
-Aplicação Streamlit local pronta
 
-### Passo a Passo
+- Python 3.10 ou superior instalado
+- Acesso ao terminal (Prompt de Comando, PowerShell, Terminal ou Bash)
+- Editor de código como VS Code (opcional, mas recomendado)
 
-### 1. Conectar à Instância EC2
-Opção A: Via Console AWS (Recomendado)
+---
 
-Acesse o Console AWS > EC2 > Instances
-Selecione sua instância
-Clique em Connect
-Escolha EC2 Instance Connect
+### Passo a Passo para Rodar Localmente
 
-Opção B: Via SSH
-bashssh -i sua-chave.pem ubuntu@SEU_IP_EC2
+### 1. Abrir o Terminal na Pasta do Projeto
 
-### 2. Preparar o Ambiente na EC2
-Atualizar o sistema:
-bashsudo apt update
-sudo apt install python3-venv python3-full -y
-Criar ambiente virtual:
-bashpython3 -m venv streamlit_env
-Ativar ambiente virtual:
-bashsource streamlit_env/bin/activate
+Abra o terminal e navegue até a pasta onde extraiu o projeto:
 
-### 3. Instalar Dependências
-bash# Atualizar pip
-pip install --upgrade pip
+#### Windows:
 
-### Instalar bibliotecas necessárias
-pip install numpy pandas matplotlib seaborn streamlit
+```powershell``
+cd "C:\Users\SeuUsuario\Downloads\nome-da-pasta"
 
-### 4. Criar/Transferir o Arquivo da Aplicação
-Opção A: Criar diretamente na EC2
-bashnano app.py
-Cole seu código Python e salve com:
+### 2. Criar e Ativar o Ambiente Virtual
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
 
-Ctrl + X
-Y
-Enter
+### 3. Instalar as Dependências
+exe: pip install streamlit numpy pandas matplotlib seaborn
 
-### 5. Executar a Aplicação Streamlit
-bashstreamlit run app.py --server.address 0.0.0.0 --server.port 8501 --server.headless true
-
-### 6. Acessar a Aplicação
-Abra seu navegador e acesse:
-http://SEU_IP_PUBLICO_EC2:8501
+### 4. Executar a Aplicação
+streamlit run app.py
